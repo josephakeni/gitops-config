@@ -1,0 +1,10 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: workloads-pdb
+  namespace: prod
+spec:
+  minAvailable: "50%"
+  selector:
+    matchLabels:
+      environment: prod
